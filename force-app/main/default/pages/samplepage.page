@@ -1,0 +1,13 @@
+<apex:page standardController="Position__c">
+<apex:form >
+<apex:pageblock >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: samplepage
+  <!-- End Default Content REMOVE THIS -->
+  <apex:pageBlockSection >
+  <apex:inputField value="{!Position__c.Name}" />
+  </apex:pageBlockSection>
+  </apex:pageblock>
+  </apex:form>
+</apex:page>

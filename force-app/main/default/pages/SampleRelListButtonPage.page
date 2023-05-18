@@ -1,0 +1,39 @@
+<apex:page standardController="Emp_Comp_Association__c" extensions="SampleRelListButtonPageCtrlExt" tabStyle="Employee__c" recordSetVar="EmpCompAssoc">
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");                  
+            for(var i=0; i<inputCheckBox.length; i++){          
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1 && inputCheckBox[i].type == "checkbox"){                                     
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+    <apex:form >
+	    <apex:pageblock >
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!createCompAssociations}" value="Associate"/>
+				<apex:commandButton action="{!cancel}" value="Cancel"/>
+			</apex:pageBlockButtons>
+	        <apex:pageblocksection >
+	            <apex:pageblocktable value="{!companyWrapList}" var="companyWrap">
+	                <apex:column headerValue="">
+	                    <apex:facet name="header">
+	                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'checkBox')"/>
+	                    </apex:facet>
+	                	<apex:inputCheckbox value="{!companyWrap.selected}" id="checkBox" />
+						<!-- <apex:actionSupport event="onclick" action="{!processSelected}" rerender="table2"/>  -->
+	                </apex:column>
+	            	<apex:column value="{!companyWrap.company.Name}" />
+	                <apex:column value="{!companyWrap.company.Country_code__c}" />
+	                <apex:column value="{!companyWrap.company.Company_code__c}" />
+	                <!-- <apex:column value="{!company.Name}">
+	                <apex:column value="{!company.Name}">
+	                <apex:column value="{!company.Name}">
+	                <apex:column value="{!company.Name}">
+	                <apex:column value="{!company.Name}"> -->
+	            </apex:pageblocktable>
+	        </apex:pageblocksection>
+	    </apex:pageblock>
+    </apex:form>
+</apex:page>

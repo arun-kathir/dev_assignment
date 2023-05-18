@@ -1,0 +1,9 @@
+<apex:page standardController="Account" extensions="CountOfOpptyExtensions">
+    <apex:outputLabel value="No. of Open Opportunities: ">
+        <apex:outputText value="{!countOfOpenOppty}"/>
+    </apex:outputLabel>
+    <br/><br/>    
+    <apex:outputLabel value="No. of Closed Opportunities: ">
+        <apex:outputText value="{!countOfClosedOppty}"/>    
+    </apex:outputLabel>
+</apex:page>

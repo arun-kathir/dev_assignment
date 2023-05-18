@@ -1,0 +1,20 @@
+<template>
+    <template if:true={repos}>
+        <table>
+            <tbody>
+                <tr>
+                    <th>Repo Name</th>
+                    <th>Description</th>
+                </tr>
+                <template for:each={repos} for:item="repo">
+                    <tr key={repo.name}>
+                        <td>{repo.name}</td>
+                        <td>{repo.description}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </template>
+
+    <lightning-button label="Fetch Data" onclick={handleFetch}></lightning-button>
+</template>

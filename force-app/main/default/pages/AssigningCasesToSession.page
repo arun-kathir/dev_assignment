@@ -1,0 +1,32 @@
+<apex:page standardController="Test_Session__c" extensions="AssigningCasesToSessionExtensions">
+    <apex:form >
+    	<apex:pageMessages />
+        <apex:pageBlock title="Assigning Test Cases to Session">
+            <apex:inputText value="{!inputCases}" id="inputCases"/>
+            <apex:commandButton value="Search" id="search" action="{!searchCases}" rerender="Caseslist"/>
+            <!-- <apex:commandButton value="Assign" id="assign"/>
+            <apex:commandButton action="{!unassign}" value="Assign" id="assign"/> -->
+            <br/><br/>
+            <apex:pageBlockTable value="{!wrapCaseList}" var="caseWrap" id="Caseslist">
+	            <apex:facet name="header">Test Cases</apex:facet>
+                <apex:column headerValue="">
+                	<apex:inputCheckbox value="{!caseWrap.selected}" id="inputId" />
+					<apex:actionSupport event="onclick" action="{!processSelected}" rerender="table2"/>
+                </apex:column>
+                <apex:column value="{!caseWrap.testcase.Name}" headerValue="Test Case ID"/>
+                <apex:column value="{!caseWrap.testcase.Test_Case_Name__c}" headerValue="Test Case Name"/>
+            </apex:pageBlockTable>
+            <br/><br/>
+            <apex:pageBlockTable value="{!selectedCases}" var="case" id="table2" title="Selected Cases">
+	            <apex:facet name="header">Selected Test Cases</apex:facet>
+                <apex:column value="{!case.Name}" headerValue="Test Case ID"/>
+                <apex:column value="{!case.Test_Case_Name__c}" headerValue="Test Case Name"/>
+            </apex:pageBlockTable>
+            <br/><br/>
+			<apex:pageBlockButtons >
+            	<apex:commandButton value="Assign To Session" action="{!assignCases}" id="assign"/>
+            </apex:pageBlockButtons>
+            <apex:outputText value="{!msg}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

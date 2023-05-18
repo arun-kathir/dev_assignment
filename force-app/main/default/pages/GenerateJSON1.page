@@ -1,0 +1,17 @@
+<apex:page controller="GenerateJSONController1">
+    <apex:form id="fm">
+        <apex:pageBlock title="Contact">
+            <apex:pageBlockSection >
+                <apex:commandButton reRender="fm" value="Submit" action="{!createContact}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection >
+                <apex:inputText id="FN" value="{!con.FirstName}"/>
+                <apex:inputText id="LN" value="{!con.LastName}"/>
+                <apex:inputText id="Mob" value="{!con.Phone}"/>
+                <apex:inputText id="Email" value="{!con.Email}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        {!finalJSONString}
+    </apex:form>
+    
+</apex:page>

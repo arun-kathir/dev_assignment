@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="NameofStudent" type="string" default=""/>
+    <aura:attribute name="NameofParent" type="string" default=""/>
+    <aura:attribute name="Standard" type="string" default=""/>
+    <aura:attribute name="HoursOfStudy" type="string[]" default="1 hour, 1 to 4 hours, 4 to 8 hours,
+                                                                 More than 8 hours"/>
+    <aura:attribute name="ResponseOnHoursofStudy" type="string"/>
+    <aura:attribute name="Mobile" type="integer" default=""/>
+    <aura:attribute name="AttendedBefore" type="boolean" default="false"/>
+    <aura:attribute name="InterestedForOnline" type="boolean"/>
+    <aura:attribute name="checkBoxValue" type="boolean" default="false"/>
+    <div class="slds-m-top_xx-large">
+        <div class="slds-page-header">
+            <div class="slds-align_absolute-center" >
+                <div class="slds-text-heading_large">
+                	Registration form for student
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-size_3-of-8">
+    <lightning:input name="StudentName" label="Enter your Name" value="{!v.NameofStudent}"/><br/>
+    <lightning:input name="ParentName" label="Enter your Parent Name" value="{!v.NameofParent}"/><br/>
+    <lightning:input name="Standard" label="Which Standard do you study?" value="{!v.Standard}"/><br/>
+    <lightning:select name="HoursOfStudy" label="Choose your Hours of Study" value="{!v.ResponseOnHoursofStudy}">
+        <aura:iteration items="{!v.HoursOfStudy}" var="hours">
+                <option value="{!hours}" text="{!hours}"></option>
+        </aura:iteration>
+    </lightning:select><br/>
+    <lightning:input type="tel" name="Mobile" label="Enter your Mobile Number" value="{!v.Mobile}"/><br/>
+    <lightning:input aura:id="checkBox" type="checkbox" name="AttendedBefore" label="Have you attended this course before?" value="{!v.AttendedBefore}" onclick="{!c.clickCheckBox}"/><br/>
+    <aura:if isTrue="{!v.checkBoxValue}">
+    	<i>Hello! You have checked this box.</i><br/>
+        </aura:if>
+    <lightning:input type="checkbox" name="InterestedOnline" label="Are you interested in online courses?" value="{!v.InterestedForOnline}"/><br/>
+    <lightning:button label="Submit" title="Submit" onclick="{!c.doSubmit}"/>
+    </div>
+</aura:component>

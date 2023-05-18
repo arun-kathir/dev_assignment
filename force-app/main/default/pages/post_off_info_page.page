@@ -1,0 +1,24 @@
+<apex:page controller="postal_off_info">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputText label="Pin Code" value="{!pinCode}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Get Details" action="{!getPostOffInfoByPincode}" reRender="Details"/>
+        	<apex:pageBlockSection id="Details">
+            	<!-- <apex:outputText>{!respBodyPinCode}</apex:outputText> -->
+                <apex:outputText >{!poNamesByPinCode}</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputText label="Branch Name" value="{!branchName}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Get Details" action="{!getPostOffInfoByBranchName}" reRender="Details1"/>
+        	<apex:pageBlockSection id="Details1">
+            	<!-- <apex:outputText>{!respBodyPinCode}</apex:outputText> -->
+                <apex:outputText >{!poNamesByBranchName}</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>        
+    </apex:form>
+</apex:page>

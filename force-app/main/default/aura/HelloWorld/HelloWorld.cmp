@@ -1,0 +1,19 @@
+<aura:component implements="force:appHostable" controller="helloWorldAuraCtrl">
+    <aura:attribute name="msg" type="String" default="default message"/>
+    <aura:attribute name="msgArray" type="String[]" default="default message, default message1"/>
+	<div class="helloCSS slds-box slds-theme_success">
+    	Hello world!
+        <!-- <div class="nested">
+            Attribute Value - {!v.msg}
+        </div> -->
+    </div>
+	<div class="helloCSS1" onclick="{!c.onClick}">
+    	Attribute Value with ! - {!v.msg} <!-- Bound expression -->
+    </div>
+    <!-- <div class="helloCSS1">
+    	Attribute Array Value - {!v.msgArray}
+    </div> -->
+	<div class="helloCSS" onclick="{!c.onClick}">
+    	Attribute Value with # - {#v.msg} <!-- Unbound expression -->
+    </div>
+</aura:component>

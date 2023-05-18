@@ -1,0 +1,8 @@
+<apex:page controller="GenerateJSONController">
+    <apex:form id="fm">
+        <apex:inputText id="a" value="{!a}"/>
+        <apex:commandButton reRender="fm" value="Submit" action="{!createJSON}"/>
+        {!finalJSONString}
+        </apex:form>
+    
+</apex:page>

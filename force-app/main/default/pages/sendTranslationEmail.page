@@ -1,0 +1,5 @@
+<apex:page controller="sendTranslationEmailCtrl">
+    <apex:form >
+        <apex:commandButton action="{!sendTranslationEmail}" value="Send Email" id="theButton"/>
+    </apex:form>
+</apex:page>

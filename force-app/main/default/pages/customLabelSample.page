@@ -1,0 +1,4 @@
+<apex:page controller="customLabelSampleCtrl">
+    <apex:outputText value="{!$Label.Sample}" /><br/>
+    <apex:outputText value="{!$Label[str]}" />
+</apex:page>

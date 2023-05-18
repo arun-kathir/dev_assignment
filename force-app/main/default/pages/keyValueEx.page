@@ -1,0 +1,17 @@
+<apex:page standardController="Key_Value_Pair__c" extensions="CtrlExtKeyValueEx">
+    <apex:form id="typeList">
+        <!-- <apex:inputfield value="{!pair.License_Type_State__c}"  id="state" label="State">
+            <apex:actionSupport action="{!selectTypes}" event="onblur" reRender="typeList" />
+        </apex:inputfield><br/>
+        <apex:selectList value="{!pair.License_Type_Code__c}" label="Type" multiselect="false" rendered="{!NOT(pair.License_Type_State__c = '')}" size="1">
+            <apex:selectOptions value="{!types}"/>
+        </apex:selectList><br/>
+        <apex:commandButton value="Test" action="{!test}" rerender="out"/><br/>
+        <apex:outputPanel id="out">
+            <apex:outputField value="{!pair.License_Type_Code__c}" label="Selected Type"/>
+        </apex:outputPanel>-->
+        <apex:outputLink value="{!URLFOR($Action.Attachment.Download, attachment.id)}" target="_blank">{!attachment.name}</apex:outputLink><br/>
+        <apex:outputLink value="{!URLFOR($Action.Document.Download, '0159000000EA6DWAA1')}" target="_blank">File1</apex:outputLink><br/>
+        <apex:outputLink value="/sfc/servlet.shepherd/version/download/0680I00000ANwbWQAT" target="_blank">File2</apex:outputLink>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,18 @@
+<apex:page standardcontroller="Position__c" title="Test Title" sidebar="false" standardStylesheets="false" >
+    Hello {!$User.FirstName}
+    <apex:variable var="pos" value="{!Position__c}"/>
+    <chatter:feed entityId="{!pos.id}"/>
+    <chatter:follow entityId="{!pos.id}"/>
+    <apex:form >
+        <apex:pageBlock title="Quick Edit" tabstyle="Interviewer__c">
+            <apex:pageBlockSection columns="3">
+                <apex:inputField value="{!pos.Name}"/>
+                <apex:inputField value="{!pos.Status__c}"/>
+                <apex:commandButton action="{!save}" value="Update"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+
+    <!-- <apex:detail relatedList="false"/>
+    <apex:relatedList list="Interviewers__r"/> -->
+</apex:page>

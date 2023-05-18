@@ -1,0 +1,40 @@
+<apex:page controller="ContactTable"> 
+    <apex:form id="myform"> 
+        <apex:pageblock >
+            <apex:pageBlockButtons location="Top">
+                <apex:commandButton value="Processed" action="{!clickMe}" />
+            </apex:pageBlockButtons>
+                <!-- In our table, we are displaying the Contact records --> 
+            <apex:pageblocktable value="{!Contact}" var="cc" >
+                <apex:column headerValue="Choose Contact"> 
+                    <!-- This is our selected Boolean property in our wrapper class --> 
+                    <apex:inputCheckbox value="{!cc.bool}"/> 
+                </apex:column> 
+                <!-- This is how we access the contact values within our Contact container/wrapper --> 
+                <apex:column value="{!cc.con.Name}"/> <apex:column value="{!cc.con.Accountid}"/> 
+                <apex:column value="{!cc.con.Email}"/> <apex:column Value="{!cc.con.MobilePhone}"/> 
+                <apex:column value="{!cc.con.LeadSource}"/> 
+            </apex:pageblocktable> 
+            <apex:pageBlockButtons location="Bottom"> 
+                <apex:commandButton value="First" action="{!Setcon.First}" reRender="myform" /> 
+                <apex:commandButton value="Previous" action="{!Setcon.Previous}" reRender="myform" /> 
+                <apex:commandButton value="Next" action="{!Setcon.Next}" reRender="myform" /> 
+                <apex:commandButton value="Last" action="{!Setcon.Last}" reRender="myform" /> 
+            </apex:pageBlockButtons> 
+            <apex:outputText >
+                Page Number {!pageNumber} 
+            </apex:outputText> 
+        </apex:pageblock> 
+        <apex:pageblock > 
+            <apex:outputPanel rendered="{!display}"> 
+                <apex:pageblocktable value="{!selectedList}" var="w" > 
+                    <apex:column value="{!w.Name}"/> 
+                    <apex:column value="{!w.Accountid}"/> 
+                    <apex:column value="{!w.Email}"/> 
+                    <apex:column value="{!w.MobilePhone}"/> 
+                    <apex:column value="{!w.LeadSource}"/> 
+                </apex:pageblocktable> 
+            </apex:outputPanel> 
+        </apex:pageblock> 
+    </apex:form> 
+</apex:page>

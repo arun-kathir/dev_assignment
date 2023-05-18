@@ -1,0 +1,14 @@
+<apex:page controller="zipCodeToWeather">
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:inputText label="Zip Code" value="{!zipcode}"/>
+            </apex:pageBlockSection>
+            <apex:commandButton value="Get Details" action="{!getWeatherInfo}" reRender="Details"/>
+        	<apex:pageBlockSection id="Details">
+                <apex:outputText >{!respBody}</apex:outputText><br/>
+                <apex:outputText >Temperature: {!temperature}</apex:outputText>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+	</apex:form>
+</apex:page>

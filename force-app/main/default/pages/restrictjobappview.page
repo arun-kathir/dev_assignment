@@ -1,0 +1,4 @@
+<apex:page standardController="Job_Application__c" extensions="restrictJobAppViewControllerExtension">
+<apex:detail relatedList="true" rendered="{!display}"/>
+<apex:pageMessage summary="Insufficient Privileges" severity="error" strength="3" rendered="{!displayMsg}"/>
+</apex:page>

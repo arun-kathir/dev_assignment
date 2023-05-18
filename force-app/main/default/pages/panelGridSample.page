@@ -1,0 +1,44 @@
+<apex:page standardController="Account">
+    <apex:panelGrid columns="3" id="theGrid" border="1">
+        <apex:outputText value="First" id="theFirst"/>
+        <apex:outputText value="Second" id="theSecond"/>
+        <apex:outputText value="Third" id="theThird"/>
+        <apex:outputText value="Fourth" id="theFourth"/>
+    </apex:panelGrid>
+    <!-- <apex:panelGrid columns="3" id="contactGrid" border="1" style="text-align: center;"> -->
+        <apex:repeat value="{!Account.Contacts}" var="contact">
+            <apex:panelGrid columns="2" id="contactInnerGrid" border="1" style="text-align: center;">
+                <apex:outputPanel id="thePanel" layout="block">
+                    <apex:outputText value="{!contact.FirstName}"/>&nbsp;
+                    <apex:outputText value="{!Contact.LastName}"/>
+                </apex:outputPanel>
+                <apex:outputPanel id="thePanel1" layout="block">
+                    <apex:outputText value="{!contact.FirstName}"/>&nbsp;
+                    <apex:outputText value="{!Contact.LastName}"/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+        </apex:repeat>
+    <!-- </apex:panelGrid> -->
+    <table id="table1" border="1">
+        <tbody>
+            <apex:repeat value="{!Account.Contacts}" var="contact">
+                <tr><td>
+                <table id="table2">
+                    <tbody>
+                        <tr>
+                            <td>{!contact.FirstName}</td>
+                        </tr>
+                        <tr>
+                            <td>{!Contact.LastName}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </td></tr>
+            </apex:repeat>
+        </tbody>
+    </table>
+        <apex:repeat value="{!Account.Contacts}" var="contact">
+            <apex:outputText value="{!contact.FirstName}"/><br/>
+            <apex:outputText value="{!Contact.LastName}"/>
+        </apex:repeat>
+</apex:page>

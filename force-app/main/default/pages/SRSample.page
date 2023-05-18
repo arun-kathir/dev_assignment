@@ -1,0 +1,77 @@
+<apex:page standardController="Position__c">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  <apex:image url="{!URLFOR($Resource.Picture1)}"/>
+  <!-- <apex:stylesheet value="{!URLFOR($Resource.css_sample)}"/> -->
+  
+  This is your new Page: SRSample
+  <apex:sectionHeader title="Title" subtitle="Sub-Title"/>
+  <apex:form >
+  <apex:pageBlock title="PageBlock" mode="Detail">
+  <apex:facet name="Header"> This is for header
+  </apex:facet>
+  <apex:pageBlockButtons location="Top">
+  <apex:commandButton action="{!save}" value="Save"/>
+  </apex:pageBlockButtons>
+  <apex:pageBlockSection title="My Section" collapsible="false" columns="1">
+  <apex:inputField value="{!Position__c.Name}"/>
+  </apex:pageBlockSection>
+    <apex:toolbar id="theToolbar">
+
+        <apex:outputText value="Sample Toolbar"/>
+
+        <apex:toolbarGroup itemSeparator="line" id="toobarGroupLinks">
+
+            <apex:outputLink value="http://www.salesforce.com">
+
+              salesforce
+
+            </apex:outputLink>
+
+            <apex:outputLink value="http://developer.salesforce.com">
+
+             apex developer network
+
+            </apex:outputLink>
+
+        </apex:toolbarGroup>
+
+
+    </apex:toolbar>
+    <apex:tabpanel >
+    <apex:tab label="Test Tab"/>
+        <apex:tab label="Test Tab1"/>
+            <apex:tab label="Test Tab2"/>
+                <apex:tab label="Test Tab3"/>
+  </apex:tabpanel>
+  <apex:panelBar >
+  <apex:panelBarItem label="Panel Bar">
+  Hi this is panel bar
+  </apex:panelBarItem>
+  
+  </apex:panelBar>
+  
+  <apex:panelgrid columns="2" border="1">
+  <apex:outputField value="{!Position__c.Location__c}"/>
+  <apex:outputField value="{!Position__c.Department__c}"/>
+  <apex:outputField value="{!Position__c.Max_Pay__c}"/>
+  <apex:outputField value="{!Position__c.Min_Pay__c}"/>
+  </apex:panelgrid>
+  <apex:pageBlockTable value="{!Position__c.Interviewers__r}" var="Pos" border="10">
+     <apex:column value="{!Pos.Name}"/>
+     <apex:column value="{!Pos.Position__c}"/>
+  </apex:pageBlockTable>
+  
+  <apex:dataTable value="{!Position__c.Interviewers__r}" var="Pos" border="1">
+     <apex:column value="{!Pos.Name}"/>
+     <apex:column value="{!Pos.Position__c}"/>
+  </apex:dataTable>
+  
+  <apex:repeat value="{!Position__c.Interviewers__r}" var="Pos">
+    {!Pos.Name}
+    <br/>
+  </apex:repeat>
+  
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+<apex:page controller="SamplePanelGridCtrl" action="{!populateAccounts}">
+    <apex:panelGrid columns="3" id="theGrid" border="1">
+        <apex:outputText value="" id="blank"/>
+        <apex:outputText value="Account Name" id="name"/>
+        <apex:outputText value="{!acc.Name}"/>
+        <apex:outputText value="{!acc.Phone}"/>
+    </apex:panelGrid>
+</apex:page>

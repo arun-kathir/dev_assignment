@@ -1,0 +1,13 @@
+<apex:page controller="ControllerClass">
+<apex:form id="a">
+    <apex:outputLabel >First Name</apex:outputLabel>
+    <apex:inputField value="{!Cd.First_Name__c}"/> <br/>
+    <apex:outputLabel >Last Name</apex:outputLabel>
+    <apex:inputField value="{!Cd.Last_Name__c}"/>
+    <apex:inputCheckbox value="{!selected1}">
+        <apex:actionSupport action="{!copyField}" event="onclick" reRender="a" />
+    </apex:inputCheckbox><br/>
+    <apex:outputLabel >Full Name</apex:outputLabel>
+    <apex:inputField value="{!Cd.Name}"/>
+</apex:form>
+</apex:page>

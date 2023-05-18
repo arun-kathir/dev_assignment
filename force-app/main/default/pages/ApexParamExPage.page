@@ -1,0 +1,41 @@
+<apex:page standardcontroller="Account" extensions="ApexParamExPageCtrlExtn">
+    <apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockSection columns="1">
+    <!-- <apex:panelBar items="{!contactList}" var="con">
+
+        <apex:panelBarItem label="Items" expanded="false">
+            <apex:outputLabel value="Name:  " for="CName"/>
+            <apex:OutputText id="CName" label="Contact Name" value="{!con.Firstname}" /><br/><br/>
+            <apex:outputLabel value="Salutation:  " for="CSal"/>
+            <apex:OutputText id="CSal" label="Contact Salutaion" value="{!con.Salutation}" /><br/><br/>
+            <apex:outputLabel value="Level:  " for="levels"/>
+	        <apex:selectList label="level" id="levels" value="{!conLevel}" multiselect="false" required="false" size="1">
+	            <apex:selectOptions value="{!levels}"/>
+	        </apex:selectList>
+            <apex:commandButton action="{!saveContact}" value="Save" id="theButton">
+            	<apex:param name="clicked" value="{!con}" assignTo="{!contactObj}"/>
+            </apex:commandButton>
+        </apex:panelBarItem>
+
+    </apex:panelBar>  -->
+    <apex:repeat value="{!contactList}" var="con" id="theRepeat">
+    	<apex:outputPanel id="thePanel">
+            <apex:outputLabel value="Name:  " for="CName"/>
+            <apex:OutputText id="CName" label="Contact Name" value="{!con.Firstname}" /><br/><br/>
+            <apex:outputLabel value="Salutation:  " for="CSal"/>
+            <apex:OutputText id="CSal" label="Contact Salutaion" value="{!con.Salutation}" /><br/><br/>
+            <apex:outputLabel value="Level:  " for="levels"/>
+	        <apex:selectList label="level" id="levels" value="{!conLevel}" multiselect="false" required="false" size="1">
+	            <apex:selectOptions value="{!levels}"/>
+	        </apex:selectList>
+            <apex:commandLink action="{!saveContact}" value="Save" id="theButton">
+            	<apex:param name="clicked" value="{!con}" assignTo="{!contactObj}"/>
+            </apex:commandLink>
+    	</apex:outputPanel>
+    </apex:repeat>
+    </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

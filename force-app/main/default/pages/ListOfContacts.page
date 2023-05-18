@@ -1,0 +1,25 @@
+<apex:page standardController="Account" extensions="listofcontactsextension">
+    <apex:form >
+        <apex:pageMessages />
+        <apex:pageBlock title="Choose Contact">
+            <apex:pageBlockTable value="{!wrapAcc}" var="caseWrap" id="Caseslist">
+                <apex:facet name="header">Contacts</apex:facet>
+                <apex:column headerValue="">
+                    <apex:commandButton action="{!processSelected}" value="Select" id="theButton" rerender="table2">
+                    	<apex:param name="clicked" value="{!caseWrap.cont.Name}" assignTo="{!clickedContactName}"/>
+                    </apex:commandButton>
+                </apex:column>
+                <apex:column value="{!caseWrap.cont.Name}" headerValue="Contact Name"/>
+            </apex:pageBlockTable>
+            </apex:pageBlock>
+            <br/><br/>
+        <apex:pageBlock title="Selected Contact" id="table2">
+            <apex:pageBlockTable value="{!selectedCons}" var="Cont"  title="Selected Contact" rendered="{!IF(selectedCons != null && selectedCons.size > 0, true, false)}">
+                <apex:facet name="header">Selected Contact</apex:facet>
+                <apex:column value="{!Cont.Name}" headerValue="Contact Name"/>
+            </apex:pageBlockTable>
+            <br/><br/>
+            <apex:outputText value="{!msg}"/>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

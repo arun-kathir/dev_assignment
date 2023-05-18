@@ -1,0 +1,36 @@
+<apex:page standardController="Contact" extensions="SampleCopyAddressPageCtrlExt">
+    <apex:sectionHeader title="Contact Edit" subtitle="New Contact"/>
+    <apex:outputText value="Contacts not associated with accounts are private and cannot be viewed by other users or included in reports."> 
+    </apex:outputText><br/><br/>
+    <apex:form >
+        <apex:pageBlock title="Contact Edit" id="test">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="Save" action="{!Save}"/>
+                <apex:commandButton value="Save & New" />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Contact Information">
+                <apex:inputField value="{!contact.FirstName}"/> 
+                <apex:inputField value="{!contact.LastName}"/>       
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Test">
+                   <apex:facet name="header">
+                        <apex:pageBlockSectionItem >
+                        <apex:outputText value="Address Information" style="float:left;"></apex:outputText>
+                        <apex:commandLink value="Copy Malling Address to Other Address" style="float:right;" action="{!test}" reRender="test"/>
+                        </apex:pageBlockSectionItem>
+                    </apex:facet>
+             
+                    <apex:inputField value="{!contact.MailingCountry}"/> 
+                    <apex:inputField value="{!contact.otherCountry}"/>  
+                    <apex:inputField value="{!contact.MailingStreet}"/> 
+                    <apex:inputField value="{!contact.otherStreet}"/>   
+                    <apex:inputField value="{!contact.MailingState}"/> 
+                    <apex:inputField value="{!contact.otherState}"/>    
+                  
+            </apex:pageBlockSection>
+             
+        </apex:pageBlock>
+    </apex:form>
+  </apex:page>

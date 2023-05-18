@@ -1,0 +1,29 @@
+<apex:page standardController="Job_Application__c">
+   <apex:form >
+        <apex:pageBlock title="JA" mode="edit">
+
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            
+            
+            <!-- This part is for Internal Stakeholders -->              
+            <apex:pageBlockSection title="JA Sec" columns="2">
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Status" for="status"/>
+                    <apex:inputField value="{!Job_Application__c.Status__c}" id="status" required="true" />
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Candidate" for="Candidate"/>
+                    <apex:inputField value="{!Job_Application__c.Candidate__c}" id="Candidate" required="true"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Position" for="Position"/>
+                    <apex:inputField value="{!Job_Application__c.Position__c}" id="Position" required="true"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

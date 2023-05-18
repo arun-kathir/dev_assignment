@@ -1,0 +1,61 @@
+{
+    "observations": {
+        "location": [
+            {
+                "observation": [
+                    {
+                        "daylight": "N",
+                        "description": "Clear. Chilly.",
+                        "skyInfo": "2",
+                        "skyDescription": "Clear",
+                        "temperature": "0.61",
+                        "temperatureDesc": "Chilly",
+                        "comfort": "-2.86",
+                        "highTemperature": "7.22",
+                        "lowTemperature": "0.61",
+                        "humidity": "56",
+                        "dewPoint": "-7.22",
+                        "precipitation1H": "*",
+                        "precipitation3H": "*",
+                        "precipitation6H": "*",
+                        "precipitation12H": "*",
+                        "precipitation24H": "*",
+                        "precipitationDesc": "",
+                        "airInfo": "*",
+                        "airDescription": "",
+                        "windSpeed": "11.12",
+                        "windDirection": "0",
+                        "windDesc": "North",
+                        "windDescShort": "N",
+                        "barometerPressure": "1015.90",
+                        "barometerTrend": "",
+                        "visibility": "16.09",
+                        "snowCover": "*",
+                        "icon": "13",
+                        "iconName": "night_clear",
+                        "iconLink": "https://weather.ls.hereapi.com/static/weather/icon/16.png",
+                        "ageMinutes": "85",
+                        "activeAlerts": "0",
+                        "country": "United States",
+                        "state": "New York",
+                        "city": "New York",
+                        "latitude": 40.7996,
+                        "longitude": -73.9703,
+                        "distance": 2.3,
+                        "elevation": 0,
+                        "utcTime": "2021-11-29T23:51:00.000-05:00"
+                    }
+                ],
+                "country": "United States",
+                "state": "New York",
+                "city": "New York",
+                "latitude": 40.79962,
+                "longitude": -73.970314,
+                "distance": 0,
+                "timezone": -5
+            }
+        ]
+    },
+    "feedCreation": "2021-11-30T06:17:09.761Z",
+    "metric": true
+}

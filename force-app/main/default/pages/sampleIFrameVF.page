@@ -1,0 +1,5 @@
+<apex:page showHeader="false">
+    <apex:pageBlock >
+        <apex:iframe src="https://nura-dev-ed--c.ap7.visual.force.com/apex/SampleRedirecPage" scrolling="true" id="theIframe"/>
+    </apex:pageBlock>
+</apex:page>

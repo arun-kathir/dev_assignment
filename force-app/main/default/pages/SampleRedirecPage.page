@@ -1,0 +1,4 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>This is just for Page Redirection</h1>
+</apex:page>

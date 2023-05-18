@@ -1,0 +1,20 @@
+<apex:page standardController="Employee__c" tabStyle="Employee__c">
+    <apex:form >
+    <apex:sectionHeader title="Employee Edit" subtitle="New Employee" rendered="{!Employee__c.id != null}"/>
+    <apex:sectionHeader title="Employee Edit" subtitle="New Employee" rendered="{!Employee__c.id = null}"/>
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:inputField value="{!Employee__c.Employee_status__c}">
+                <apex:actionSupport event="onchange" rerender="section"/>
+            </apex:inputField>
+        <!--<apex:pageBlockSection id="section" >-->
+        <apex:outputPanel id="section">
+            <apex:pageBlockSectionItem >
+            <apex:outputLabel value="Sample" rendered="{!Employee__c.Employee_status__c = 'Active'}"></apex:outputLabel>
+            <apex:inputField value="{!Employee__c.Sample_Text__c}" rendered="{!Employee__c.Employee_status__c = 'Active'}"/>
+            </apex:pageBlockSectionItem>
+        </apex:outputPanel>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>
